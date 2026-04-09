@@ -701,28 +701,71 @@ footer{
   text-align:center;
   font-size:13px;
 }
-footer .logo{font-family:'Fredoka',sans-serif;font-size:26px;color:var(--amarelo);margin-bottom:8px}
+footer .logo{font-family:'Fredoka',sans-serif;font-size:26px;color:var(--amarelo);margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:10px}
 footer p{opacity:.7;margin:4px 0}
 footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-left:auto;margin-right:auto}
+
+/* ====== RAPOSINHA MASCOTE ====== */
+.raposinha-flutuante{
+  position:absolute;
+  top:-10px;right:-20px;
+  width:120px;
+  animation:float 3s ease-in-out infinite;
+  z-index:10;
+  transform:rotate(8deg);
+  pointer-events:none;
+}
+.urg-raposinha{
+  height:30px;
+  vertical-align:middle;
+  margin-right:6px;
+}
+.cta-icon{
+  height:40px;
+  display:inline-block;
+  vertical-align:middle;
+  margin-right:4px;
+  flex-shrink:0;
+}
+.footer-logo-img{
+  width:50px;
+  display:inline-block;
+  vertical-align:middle;
+}
+.bonus-img{
+  width:60px;
+  height:80px;
+  object-fit:cover;
+  border-radius:8px;
+  border:2px solid var(--azul-escuro);
+  flex-shrink:0;
+}
+
+@media(max-width:820px){
+  .raposinha-flutuante{width:60px;top:-5px;right:-5px}
+  .cta-icon{height:30px}
+  .bonus-img{width:50px;height:70px}
+}
 </style>
 </head>
 <body>
 
 <!-- BARRA URGÊNCIA -->
 <div class="urgencia-bar">
-  ⚡ <span>OFERTA RELÂMPAGO</span> — Apenas <strong id="vagas-topo">7</strong> vagas restantes hoje por R$1,99 ⚡
+  <img src="images/raposinha-oficial.png" class="urg-raposinha" alt=""> ⚡ <span>OFERTA RELÂMPAGO</span> — Apenas <strong id="vagas-topo">7</strong> vagas restantes hoje por R$1,99 ⚡
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-grid">
-      <div>
+      <div style="position:relative">
+        <img src="images/raposinha-oficial.png" class="raposinha-flutuante" alt="Raposinha Sabida">
         <span class="badge-top">⭐ +625 mães já garantiram hoje</span>
         <h1>Alfabetize seu filho <span class="destaque">brincando</span> por apenas:</h1>
         <div class="preco-isca">R$1,99<small>HOJE • VAGAS LIMITADAS</small></div>
         <p class="lead">Mais de <strong>2.750 atividades</strong> aprovadas pela BNCC, criadas por especialistas em desenvolvimento infantil. Funciona até para crianças com TDAH e necessidades especiais.</p>
-        <a href="#oferta" class="cta">🚀 Quero Pagar R$1,99 Agora</a>
+        <a href="#oferta" class="cta"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Quero Pagar R$1,99 Agora</a>
         <span class="cta-mini">🔒 Acesso imediato no e-mail e WhatsApp • 7 dias de garantia</span>
         <div class="trust-bar">
           <span>📱 100% Digital</span>
@@ -817,7 +860,7 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
 <!-- TDAH ESPECIAIS -->
 <section class="especiais">
   <div class="box">
-    <span class="emoji">💙</span>
+    <img src="images/raposinha-fofa.png" alt="Raposinha Fofa" style="width:120px;margin:0 auto 12px;display:block">
     <h2>Funciona também para crianças com TDAH e necessidades especiais</h2>
     <p>O Kit Raposinha Sabida foi pensado para respeitar o ritmo de cada criança. Atividades visuais, lúdicas e progressivas que ajudam crianças com TDAH, autismo leve e outras especificidades a aprenderem de forma divertida e sem frustração.</p>
   </div>
@@ -830,11 +873,11 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
     <h2>E ainda leva 5 presentes grátis</h2>
     <p class="intro">Adquirindo o Kit HOJE você recebe estes bônus que vão potencializar o aprendizado:</p>
     <div class="bonus-list">
-      <div class="bonus-item"><div class="check">✓</div><div><strong>Bônus 1: Apostila de Português</strong><small>Reforça a habilidade mais importante da alfabetização</small><span class="valor">Valor R$ 47</span></div></div>
-      <div class="bonus-item"><div class="check">✓</div><div><strong>Bônus 2: Frases e Textos</strong><small>Kit completo para o desenvolvimento da leitura</small><span class="valor">Valor R$ 37</span></div></div>
-      <div class="bonus-item"><div class="check">✓</div><div><strong>Bônus 3: Jogos Didáticos</strong><small>Aprendizado divertido com murais e jogos alfabéticos</small><span class="valor">Valor R$ 27</span></div></div>
-      <div class="bonus-item"><div class="check">✓</div><div><strong>Bônus 4: Grupo VIP no WhatsApp</strong><small>Conteúdos e atividades gratuitas toda semana</small><span class="valor">Valor R$ 47</span></div></div>
-      <div class="bonus-item"><div class="check">✓</div><div><strong>Bônus 5: Surpresa Especial 🎉</strong><small>Um presente que você só descobre ao receber o kit</small><span class="valor">Valor R$ 39</span></div></div>
+      <div class="bonus-item"><img src="images/apostila-de-portugues.png" class="bonus-img" alt="Apostila de Português"><div class="check">✓</div><div><strong>Bônus 1: Apostila de Português</strong><small>Reforça a habilidade mais importante da alfabetização</small><span class="valor">Valor R$ 47</span></div></div>
+      <div class="bonus-item"><img src="images/frases-e-textos.png" class="bonus-img" alt="Frases e Textos"><div class="check">✓</div><div><strong>Bônus 2: Frases e Textos</strong><small>Kit completo para o desenvolvimento da leitura</small><span class="valor">Valor R$ 37</span></div></div>
+      <div class="bonus-item"><img src="images/jogos-didaticos.png" class="bonus-img" alt="Jogos Didáticos"><div class="check">✓</div><div><strong>Bônus 3: Jogos Didáticos</strong><small>Aprendizado divertido com murais e jogos alfabéticos</small><span class="valor">Valor R$ 27</span></div></div>
+      <div class="bonus-item"><img src="images/whatsapp.jpg" class="bonus-img" alt="Grupo VIP WhatsApp"><div class="check">✓</div><div><strong>Bônus 4: Grupo VIP no WhatsApp</strong><small>Conteúdos e atividades gratuitas toda semana</small><span class="valor">Valor R$ 47</span></div></div>
+      <div class="bonus-item"><img src="images/surpresa-especial.png" class="bonus-img" alt="Surpresa Especial"><div class="check">✓</div><div><strong>Bônus 5: Surpresa Especial 🎉</strong><small>Um presente que você só descobre ao receber o kit</small><span class="valor">Valor R$ 39</span></div></div>
     </div>
     <div class="bonus-soma">
       Só em bônus você leva:
@@ -897,7 +940,7 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
           <div class="por">por apenas</div>
           <div class="preco-grande"><small>R$</small>16<small>,99</small></div>
           <p class="parcelas">pagamento único • acesso imediato</p>
-          <a href="#" class="cta">🛒 Quero o Kit Completo</a>
+          <a href="#" class="cta"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Quero o Kit Completo</a>
           <div class="garantia">
             <div class="gar-selo"><b>7</b><small>DIAS</small></div>
             <p><strong>Garantia incondicional</strong>Se não gostar, devolvemos 100% do valor em até 7 dias.</p>
@@ -920,7 +963,7 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
           <div class="por">oferta relâmpago</div>
           <div class="preco-grande"><small>R$</small>1<small>,99</small></div>
           <p class="parcelas">⚠️ vagas limitadas — só hoje</p>
-          <a href="#" class="cta cta-vermelho" onclick="esgotar(event)">🛒 Quero Pagar R$1,99</a>
+          <a href="#" class="cta cta-vermelho" onclick="esgotar(event)"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Quero Pagar R$1,99</a>
           <div class="aviso-basico">⚠️ Versão limitada. Para ter acesso a tudo, escolha o Kit Completo.</div>
         </div>
 
@@ -944,7 +987,7 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
       <div class="por">oferta especial só hoje</div>
       <div class="preco-grande"><small>R$</small>9<small>,97</small></div>
       <p class="parcelas">pagamento único • acesso imediato</p>
-      <a href="#" class="cta">🛒 Garantir Por R$9,97</a>
+      <a href="#" class="cta"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Garantir Por R$9,97</a>
       <div class="garantia">
         <div class="gar-selo"><b>7</b><small>DIAS</small></div>
         <p><strong>Garantia incondicional</strong>Se não gostar, devolvemos 100% do valor em até 7 dias, sem perguntas.</p>
@@ -971,7 +1014,7 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
 </section>
 
 <footer>
-  <div class="logo">🦊 Raposinha Sabida</div>
+  <div class="logo"><img src="images/raposinha-oficial.png" class="footer-logo-img" alt=""> Raposinha Sabida</div>
   <p style="color:var(--amarelo);font-weight:700;margin-bottom:8px">Aprender Brincando</p>
   <p>© 2026 Todos os direitos reservados</p>
   <p>Suporte: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8be8e4e5ffeaffe4cbeae7edeae0e2eff8a5e8e4e6a5e9f9">[email&#160;protected]</a></p>
