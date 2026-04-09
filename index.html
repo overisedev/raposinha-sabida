@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit Raposinha Sabida — Alfabetize seu filho por R$1,99</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --amarelo:#FFD23F;
+  --amarelo-claro:#FFE066;
+  --azul:#1B9CFC;
+  --azul-escuro:#0A3D62;
+  --rosa:#FF6B9D;
+  --verde:#06D6A0;
+  --verde-escuro:#05B488;
+  --laranja:#FF8C42;
+  --vermelho:#EE5A6F;
+  --creme:#FFF8E7;
+  --texto:#2D3436;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Nunito',sans-serif;
+  color:var(--texto);
+  background:var(--creme);
+  overflow-x:hidden;
+  line-height:1.6;
+}
+h1,h2,h3,.display{font-family:'Fredoka',sans-serif;line-height:1.1}
+.container{max-width:1100px;margin:0 auto}
+
+/* ====== BARRA DE URGÊNCIA TOPO ====== */
+.urgencia-bar{
+  background:var(--vermelho);
+  color:white;
+  text-align:center;
+  padding:10px 16px;
+  font-weight:800;
+  font-size:14px;
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-bottom:3px solid var(--azul-escuro);
+}
+.urgencia-bar span{display:inline-block;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+
+/* ====== HERO ====== */
+.hero{
+  background:
+    radial-gradient(circle at 15% 20%, #FFE066 0%, transparent 40%),
+    radial-gradient(circle at 85% 30%, #74B9FF 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, #FFB6D9 0%, transparent 50%),
+    linear-gradient(135deg, #FFF8E7 0%, #FFE8D6 100%);
+  padding:50px 24px 70px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle, rgba(0,0,0,.04) 1px, transparent 1px);
+  background-size:24px 24px;
+  pointer-events:none;
+}
+.hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
+.badge-top{
+  display:inline-block;
+  background:white;
+  border:3px solid var(--azul-escuro);
+  border-radius:999px;
+  padding:8px 20px;
+  font-weight:800;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  box-shadow:4px 4px 0 var(--azul-escuro);
+  margin-bottom:24px;
+  transform:rotate(-2deg);
+}
+.hero h1{
+  font-size:clamp(34px,5.5vw,60px);
+  font-weight:700;
+  color:var(--azul-escuro);
+  margin-bottom:20px;
+  max-width:900px;
+}
+.hero h1 .destaque{
+  background:linear-gradient(120deg, transparent 0%, transparent 8%, var(--amarelo) 8%, var(--amarelo) 92%, transparent 92%);
+  padding:0 8px;
+  display:inline-block;
+  transform:rotate(-1deg);
+}
+.preco-isca{
+  display:inline-block;
+  background:var(--vermelho);
+  color:white;
+  font-family:'Fredoka',sans-serif;
+  font-size:clamp(38px,6vw,68px);
+  padding:8px 24px;
+  border-radius:18px;
+  border:5px solid var(--azul-escuro);
+  box-shadow:8px 8px 0 var(--azul-escuro);
+  transform:rotate(-3deg);
+  margin:8px 0;
+  font-weight:700;
+  line-height:1;
+}
+.preco-isca small{font-size:.4em;display:block;font-weight:600;letter-spacing:1px}
+.hero p.lead{
+  font-size:clamp(17px,2vw,21px);
+  max-width:680px;
+  margin:24px 0 28px;
+  color:#333;
+}
+.hero p.lead strong{background:var(--amarelo);padding:2px 6px;border-radius:4px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr}}
+
+.cta{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  background:var(--verde);
+  color:white;
+  font-family:'Fredoka',sans-serif;
+  font-weight:700;
+  font-size:clamp(17px,2vw,22px);
+  padding:20px 36px;
+  border-radius:999px;
+  text-decoration:none;
+  border:4px solid var(--azul-escuro);
+  box-shadow:6px 6px 0 var(--azul-escuro);
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  transition:all .15s ease;
+  cursor:pointer;
+  animation:wiggle 2s ease-in-out infinite;
+}
+@keyframes wiggle{0%,100%{transform:rotate(0)}50%{transform:rotate(-1deg) scale(1.02)}}
+.cta:hover{transform:translate(-2px,-2px) scale(1.03);box-shadow:8px 8px 0 var(--azul-escuro);animation:none}
+.cta:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--azul-escuro)}
+.cta-mini{font-size:13px;color:#666;margin-top:14px;display:block}
+
+.hero-img{
+  position:relative;
+  display:flex;
+  justify-content:center;
+}
+.hero-foto{
+  width:100%;
+  max-width:380px;
+  border-radius:24px;
+  border:5px solid var(--azul-escuro);
+  box-shadow:12px 12px 0 var(--azul-escuro);
+  transform:rotate(3deg);
+  display:block;
+  object-fit:cover;
+}
+.hero-card{
+  width:100%;
+  max-width:360px;
+  aspect-ratio:3/4;
+  background:linear-gradient(145deg,var(--amarelo-claro),var(--laranja));
+  border:5px solid var(--azul-escuro);
+  border-radius:24px;
+  box-shadow:12px 12px 0 var(--azul-escuro);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:130px;
+  transform:rotate(3deg);
+  position:relative;
+}
+.hero-card::after{
+  content:"ABC";
+  position:absolute;
+  top:18px;left:24px;
+  font-family:'Fredoka',sans-serif;
+  font-weight:700;
+  color:white;
+  font-size:32px;
+  letter-spacing:4px;
+}
+.float{position:absolute;font-size:48px;animation:float 3s ease-in-out infinite}
+.float.f1{top:-10px;left:-10px;animation-delay:0s}
+.float.f2{bottom:20px;right:-20px;animation-delay:1s}
+.float.f3{top:40%;right:-30px;animation-delay:1.5s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-15px) rotate(5deg)}}
+
+.trust-bar{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:28px;
+  font-size:14px;
+  font-weight:800;
+}
+.trust-bar span{display:flex;align-items:center;gap:6px;background:white;padding:6px 14px;border-radius:999px;border:2px solid var(--azul-escuro)}
+
+/* ====== NÚMEROS / AUTORIDADE ====== */
+.numeros{
+  background:var(--azul-escuro);
+  color:white;
+  padding:50px 24px;
+}
+.numeros-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:30px;
+  text-align:center;
+  max-width:1000px;
+  margin:0 auto;
+}
+.num-item .n{
+  font-family:'Fredoka',sans-serif;
+  font-size:clamp(36px,5vw,56px);
+  color:var(--amarelo);
+  display:block;
+  font-weight:700;
+  line-height:1;
+}
+.num-item .l{font-size:14px;opacity:.85;margin-top:6px;display:block}
+
+/* ====== DOR ====== */
+.dor{
+  background:var(--creme);
+  padding:80px 24px;
+  text-align:center;
+}
+.dor h2{font-size:clamp(28px,4vw,44px);margin-bottom:16px;color:var(--azul-escuro)}
+.dor h2 span{color:var(--vermelho)}
+.dor .sub{max-width:680px;margin:0 auto 48px;font-size:18px;color:#555}
+.dor-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+.dor-card{
+  background:white;
+  border:3px solid var(--azul-escuro);
+  border-radius:20px;
+  padding:28px 24px;
+  text-align:left;
+  box-shadow:5px 5px 0 var(--azul-escuro);
+  transition:transform .3s;
+}
+.dor-card:hover{transform:translateY(-6px)}
+.dor-card .emoji{font-size:42px;display:block;margin-bottom:12px}
+.dor-card h3{font-size:18px;margin-bottom:6px;color:var(--azul-escuro)}
+.dor-card p{font-size:15px;color:#555}
+
+/* ====== COMO FUNCIONA ====== */
+.como{
+  padding:80px 24px;
+  background:var(--azul-escuro);
+  color:white;
+}
+.como h2{text-align:center;font-size:clamp(28px,4vw,44px);color:var(--amarelo);margin-bottom:50px}
+.passos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  max-width:1000px;
+  margin:0 auto;
+}
+.passo{
+  text-align:center;
+  background:rgba(255,255,255,.08);
+  border:2px solid rgba(255,255,255,.2);
+  border-radius:24px;
+  padding:32px 24px;
+  position:relative;
+}
+.passo .num{
+  position:absolute;top:-25px;left:50%;
+  transform:translateX(-50%);
+  width:50px;height:50px;
+  background:var(--amarelo);
+  color:var(--azul-escuro);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fredoka',sans-serif;
+  font-size:28px;
+  border:4px solid var(--azul-escuro);
+  font-weight:700;
+}
+.passo .icon{font-size:54px;margin:18px 0 12px;display:block}
+.passo h3{font-size:20px;color:var(--amarelo);margin-bottom:8px}
+.passo p{font-size:15px;opacity:.9}
+
+/* ====== MÓDULOS ====== */
+.solucao{padding:90px 24px;background:var(--creme)}
+.section-title{
+  text-align:center;
+  font-size:clamp(30px,4.5vw,50px);
+  color:var(--azul-escuro);
+  margin-bottom:16px;
+}
+.section-sub{
+  text-align:center;
+  font-size:18px;
+  max-width:680px;
+  margin:0 auto 60px;
+  color:#555;
+}
+.modulos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+.modulo{
+  background:white;
+  border:4px solid var(--azul-escuro);
+  border-radius:24px;
+  padding:26px 22px;
+  box-shadow:6px 6px 0 var(--azul-escuro);
+  transition:all .25s;
+}
+.modulo:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--azul-escuro)}
+.modulo .icone{
+  width:60px;height:60px;
+  border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px;
+  margin-bottom:14px;
+  border:3px solid var(--azul-escuro);
+}
+.m1 .icone{background:var(--amarelo)}
+.m2 .icone{background:var(--rosa)}
+.m3 .icone{background:var(--verde)}
+.m4 .icone{background:var(--azul);color:white}
+.m5 .icone{background:var(--laranja)}
+.m6 .icone{background:#A29BFE}
+.m7 .icone{background:#FDA7DF}
+.m8 .icone{background:#74B9FF}
+.m9 .icone{background:#FFB142}
+.modulo h3{font-size:20px;color:var(--azul-escuro);margin-bottom:10px}
+.modulo p{font-size:14px;color:#555}
+.modulo-img{
+  width:100%;
+  margin:0 0 18px;
+  border-radius:16px;
+  overflow:hidden;
+  background:var(--creme);
+  border:3px solid var(--azul-escuro);
+  aspect-ratio:3/4;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.modulo-img img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+.modulo .icone{display:none}
+
+/* ====== TDAH / ESPECIAIS ====== */
+.especiais{
+  padding:70px 24px;
+  background:linear-gradient(135deg,#A29BFE,#74B9FF);
+  color:white;
+  text-align:center;
+}
+.especiais .box{
+  max-width:780px;
+  margin:0 auto;
+  background:white;
+  color:var(--texto);
+  border:4px solid var(--azul-escuro);
+  border-radius:28px;
+  padding:40px 32px;
+  box-shadow:8px 8px 0 var(--azul-escuro);
+}
+.especiais .box .emoji{font-size:60px}
+.especiais h2{color:var(--azul-escuro);font-size:clamp(24px,3.5vw,36px);margin:12px 0}
+.especiais p{font-size:17px;color:#444}
+
+/* ====== BÔNUS ====== */
+.bonus{
+  padding:90px 24px;
+  background:repeating-linear-gradient(45deg,#FFE066 0 20px,#FFD23F 20px 40px);
+  position:relative;
+}
+.bonus-box{
+  max-width:920px;
+  margin:0 auto;
+  background:white;
+  border:5px dashed var(--azul-escuro);
+  border-radius:32px;
+  padding:50px 36px;
+  text-align:center;
+  position:relative;
+}
+.bonus-tag{
+  position:absolute;
+  top:-22px;left:50%;
+  transform:translateX(-50%) rotate(-3deg);
+  background:var(--rosa);
+  color:white;
+  font-family:'Fredoka',sans-serif;
+  font-size:20px;
+  padding:10px 28px;
+  border-radius:999px;
+  border:4px solid var(--azul-escuro);
+  box-shadow:4px 4px 0 var(--azul-escuro);
+  white-space:nowrap;
+}
+.bonus-box h2{font-size:clamp(26px,4vw,40px);color:var(--azul-escuro);margin:24px 0 12px}
+.bonus-box .intro{color:#555;margin-bottom:32px;font-size:16px}
+.bonus-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+  text-align:left;
+}
+.bonus-item{
+  display:flex;gap:14px;
+  align-items:flex-start;
+  padding:18px;
+  background:var(--creme);
+  border-radius:16px;
+  border:2px solid var(--azul-escuro);
+  position:relative;
+}
+.bonus-item .check{
+  flex-shrink:0;
+  width:34px;height:34px;
+  background:var(--verde);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-weight:800;
+  border:2px solid var(--azul-escuro);
+}
+.bonus-item strong{display:block;color:var(--azul-escuro);font-size:15px;margin-bottom:4px}
+.bonus-item small{color:#666;font-size:12px;display:block}
+.bonus-item .valor{
+  display:inline-block;
+  background:var(--vermelho);
+  color:white;
+  font-size:11px;
+  font-weight:800;
+  padding:2px 8px;
+  border-radius:4px;
+  margin-top:6px;
+}
+.bonus-soma{
+  margin-top:30px;
+  font-family:'Fredoka',sans-serif;
+  font-size:20px;
+  color:var(--azul-escuro);
+}
+.bonus-soma .total{
+  display:block;
+  font-size:32px;
+  color:var(--vermelho);
+  text-decoration:line-through;
+  margin-top:6px;
+}
+
+/* ====== DEPOIMENTOS ====== */
+.depoimentos{padding:90px 24px;background:white}
+.deps-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:24px;
+}
+.dep{
+  background:var(--creme);
+  border:3px solid var(--azul-escuro);
+  border-radius:20px;
+  padding:24px;
+  box-shadow:5px 5px 0 var(--azul-escuro);
+}
+.dep .estrelas{color:var(--amarelo);font-size:22px;margin-bottom:10px;-webkit-text-stroke:1px var(--azul-escuro)}
+.dep p{font-size:15px;font-style:italic;margin-bottom:16px;color:#444}
+.dep .quem{display:flex;align-items:center;gap:12px}
+.dep .avatar{
+  width:48px;height:48px;
+  border-radius:50%;
+  background:var(--rosa);
+  display:flex;align-items:center;justify-content:center;
+  color:white;font-weight:800;
+  border:2px solid var(--azul-escuro);
+}
+.dep .quem strong{display:block;color:var(--azul-escuro);font-size:14px}
+.dep .quem small{color:#777;font-size:12px}
+
+/* ====== OFERTA ====== */
+.oferta{
+  padding:90px 24px;
+  background:linear-gradient(135deg,var(--azul) 0%,var(--azul-escuro) 100%);
+  color:white;
+  text-align:center;
+}
+.contador{
+  background:var(--vermelho);
+  color:white;
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:15px;
+  margin-bottom:30px;
+  border:3px solid white;
+  animation:pulse 1.5s infinite;
+}
+.oferta-card{
+  max-width:560px;
+  margin:0 auto;
+  background:white;
+  color:var(--texto);
+  border-radius:32px;
+  padding:50px 36px;
+  border:5px solid var(--amarelo);
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+  position:relative;
+}
+.oferta-card .selo{
+  position:absolute;
+  top:-30px;right:-20px;
+  background:var(--rosa);
+  color:white;
+  width:110px;height:110px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;
+  font-family:'Fredoka',sans-serif;
+  border:4px solid var(--azul-escuro);
+  transform:rotate(15deg);
+  font-size:13px;
+  line-height:1.1;
+  text-align:center;
+  box-shadow:4px 4px 0 var(--azul-escuro);
+  z-index:2;
+}
+.oferta-card .selo strong{font-size:24px;display:block}
+.oferta-card h2{color:var(--azul-escuro);font-size:30px;margin-bottom:8px}
+.oferta-card .sub-card{color:#666;font-size:14px;margin-bottom:20px}
+.de{text-decoration:line-through;color:#999;font-size:18px;margin-top:20px}
+.por{font-size:14px;color:#666;margin-top:8px}
+.preco-grande{
+  font-family:'Fredoka',sans-serif;
+  font-size:80px;
+  color:var(--vermelho);
+  font-weight:700;
+  line-height:1;
+  margin:8px 0;
+}
+.preco-grande small{font-size:28px;vertical-align:top;color:var(--azul-escuro)}
+.parcelas{font-size:15px;color:#555;margin-bottom:24px}
+.lista-card{
+  text-align:left;
+  background:var(--creme);
+  border-radius:16px;
+  padding:20px;
+  margin:20px 0;
+  border:2px solid var(--azul-escuro);
+}
+.lista-card li{
+  list-style:none;
+  padding:6px 0;
+  font-size:14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.lista-card li::before{content:"✅";font-size:16px}
+.garantia{
+  display:flex;align-items:center;gap:14px;
+  background:var(--creme);
+  border:2px solid var(--azul-escuro);
+  border-radius:16px;
+  padding:16px;
+  margin-top:24px;
+  text-align:left;
+}
+.garantia .gar-selo{
+  flex-shrink:0;
+  width:64px;height:64px;
+  background:var(--verde);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fredoka',sans-serif;
+  color:white;
+  border:3px solid var(--azul-escuro);
+  line-height:1;
+  flex-direction:column;
+}
+.garantia .gar-selo b{font-size:22px}
+.garantia .gar-selo small{font-size:9px}
+.garantia p{font-size:13px;color:#444}
+.garantia strong{color:var(--azul-escuro);display:block;font-size:14px;margin-bottom:2px}
+
+/* Estado: ESGOTADO + UPSELL */
+.esgotado-aviso{
+  background:var(--vermelho);
+  color:white;
+  padding:14px;
+  border-radius:12px;
+  font-weight:800;
+  margin-bottom:20px;
+  font-size:14px;
+}
+.hidden{display:none}
+
+/* Layout dois cards */
+.dois-cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  max-width:1000px;
+  margin:0 auto;
+  align-items:start;
+}
+@media(max-width:820px){.dois-cards{grid-template-columns:1fr}}
+.dois-cards .oferta-card{margin:0;max-width:none}
+.card-completo{
+  border-color:var(--verde) !important;
+  transform:scale(1.03);
+  position:relative;
+}
+@media(max-width:820px){.card-completo{transform:none}}
+.card-completo .preco-grande{color:var(--verde-escuro)}
+.card-basico{
+  border-color:#ccc !important;
+  opacity:.95;
+}
+.card-basico .preco-grande{color:var(--vermelho)}
+.tag-recomendado{
+  position:absolute;
+  top:-18px;left:50%;
+  transform:translateX(-50%);
+  background:var(--verde);
+  color:white;
+  padding:8px 22px;
+  border-radius:999px;
+  font-weight:800;
+  font-size:13px;
+  border:3px solid var(--azul-escuro);
+  box-shadow:3px 3px 0 var(--azul-escuro);
+  white-space:nowrap;
+  z-index:3;
+}
+.selo-promo{background:var(--vermelho) !important}
+.lista-card li.off{
+  opacity:.5;
+  text-decoration:line-through;
+}
+.lista-card li.off::before{content:"❌"}
+.cta-vermelho{background:var(--vermelho) !important}
+.aviso-basico{
+  background:#fff3cd;
+  border:2px solid #ffc107;
+  border-radius:12px;
+  padding:12px;
+  margin-top:18px;
+  font-size:12px;
+  color:#856404;
+  font-weight:700;
+}
+
+/* ====== FAQ ====== */
+.faq{padding:90px 24px;background:var(--creme)}
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.faq-item{
+  background:white;
+  border:3px solid var(--azul-escuro);
+  border-radius:16px;
+  padding:20px 24px;
+  cursor:pointer;
+  box-shadow:4px 4px 0 var(--azul-escuro);
+}
+.faq-item summary{
+  font-family:'Fredoka',sans-serif;
+  font-size:17px;
+  color:var(--azul-escuro);
+  list-style:none;
+  display:flex;justify-content:space-between;align-items:center;
+  gap:12px;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-size:28px;transition:transform .2s;flex-shrink:0}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{margin-top:12px;color:#555;font-size:15px}
+
+/* ====== FOOTER ====== */
+footer{
+  background:var(--azul-escuro);
+  color:white;
+  padding:40px 24px;
+  text-align:center;
+  font-size:13px;
+}
+footer .logo{font-family:'Fredoka',sans-serif;font-size:26px;color:var(--amarelo);margin-bottom:8px}
+footer p{opacity:.7;margin:4px 0}
+footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-left:auto;margin-right:auto}
+</style>
+</head>
+<body>
+
+<!-- BARRA URGÊNCIA -->
+<div class="urgencia-bar">
+  ⚡ <span>OFERTA RELÂMPAGO</span> — Apenas <strong id="vagas-topo">7</strong> vagas restantes hoje por R$1,99 ⚡
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div>
+        <span class="badge-top">⭐ +625 mães já garantiram hoje</span>
+        <h1>Alfabetize seu filho <span class="destaque">brincando</span> por apenas:</h1>
+        <div class="preco-isca">R$1,99<small>HOJE • VAGAS LIMITADAS</small></div>
+        <p class="lead">Mais de <strong>2.750 atividades</strong> aprovadas pela BNCC, criadas por especialistas em desenvolvimento infantil. Funciona até para crianças com TDAH e necessidades especiais.</p>
+        <a href="#oferta" class="cta">🚀 Quero Pagar R$1,99 Agora</a>
+        <span class="cta-mini">🔒 Acesso imediato no e-mail e WhatsApp • 7 dias de garantia</span>
+        <div class="trust-bar">
+          <span>📱 100% Digital</span>
+          <span>📧 Entrega na hora</span>
+          <span>🛡️ Compra segura</span>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img
+          src="images/d892f080-3b75-40f7-ba39-a16f9b9c949d (1).jpg"
+          alt="Kit Raposinha Sabida"
+          class="hero-foto"
+        >
+        <span class="float f1">✏️</span>
+        <span class="float f2">🌟</span>
+        <span class="float f3">🎈</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NÚMEROS / AUTORIDADE -->
+<section class="numeros">
+  <div class="numeros-grid">
+    <div class="num-item"><span class="n">+2.750</span><span class="l">Atividades práticas</span></div>
+    <div class="num-item"><span class="n">9</span><span class="l">Cadernos completos</span></div>
+    <div class="num-item"><span class="n">5</span><span class="l">Bônus exclusivos</span></div>
+    <div class="num-item"><span class="n">100%</span><span class="l">Aprovado pela BNCC</span></div>
+  </div>
+</section>
+
+<!-- DOR -->
+<section class="dor">
+  <div class="container">
+    <h2>Está cansada de ver seu filho com <span>dificuldade</span> para aprender a ler?</h2>
+    <p class="sub">E não sabe por onde começar para ajudá-lo? Você não está sozinha. Existe um caminho simples, prático e eficaz — mesmo para quem não é professor!</p>
+    <div class="dor-grid">
+      <div class="dor-card"><span class="emoji">😩</span><h3>Foge das atividades</h3><p>A criança prefere a tela do celular e não tem paciência para estudar.</p></div>
+      <div class="dor-card"><span class="emoji">⏰</span><h3>Você não tem tempo</h3><p>Não dá para criar atividades novas todo dia depois de trabalhar.</p></div>
+      <div class="dor-card"><span class="emoji">😟</span><h3>Atraso na escola</h3><p>Os coleguinhas já estão lendo e seu filho ainda confunde as letras.</p></div>
+      <div class="dor-card"><span class="emoji">🤯</span><h3>Não sabe o método certo</h3><p>Tantas dicas na internet que você fica perdida e desiste no meio.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como">
+  <div class="container">
+    <h2>Como funciona é muito simples 👇</h2>
+    <div class="passos">
+      <div class="passo">
+        <div class="num">1</div>
+        <span class="icon">📧</span>
+        <h3>Receba no e-mail</h3>
+        <p>O Kit Raposinha Sabida chega no seu e-mail e WhatsApp em formato PDF, imediatamente após a compra.</p>
+      </div>
+      <div class="passo">
+        <div class="num">2</div>
+        <span class="icon">🖨️</span>
+        <h3>Imprima ou use no tablet</h3>
+        <p>Imprima tudo de uma vez ou aos poucos, à medida que a criança for realizando.</p>
+      </div>
+      <div class="passo">
+        <div class="num">3</div>
+        <span class="icon">⏱️</span>
+        <h3>15 a 30 min por dia</h3>
+        <p>Faça as atividades na ordem do material. Em poucas semanas você verá a evolução!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULOS -->
+<section class="solucao">
+  <div class="container">
+    <h2 class="section-title">9 Cadernos completos pra alfabetizar do zero</h2>
+    <p class="section-sub">Material sequencial e divertido que leva seu filho do "não sei nada" ao "já estou lendo!"</p>
+    <div class="modulos">
+      <div class="modulo m1"><div class="modulo-img"><img src="images/vogais.png" alt="Caderno de Vogais"></div><div class="icone">🅰️</div><h3>Vogais e Consciência Fonológica</h3><p>Iniciamos o processo de alfabetização com a consciência fonológica e o reconhecimento das vogais.</p></div>
+      <div class="modulo m2"><div class="modulo-img"><img src="images/consoantes.png" alt="Caderno de Consoantes"></div><div class="icone">🔤</div><h3>Consoantes</h3><p>Trabalhamos todas as consoantes do alfabeto, na forma bastão (caixa alta) e cursiva.</p></div>
+      <div class="modulo m3"><div class="modulo-img"><img src="images/fonemas.png" alt="Caderno de Fonemas e Grafemas"></div><div class="icone">🔊</div><h3>Fonemas e Grafemas</h3><p>O som e o símbolo das letras, sílabas e palavras de forma simples e clara.</p></div>
+      <div class="modulo m4"><div class="modulo-img"><img src="images/silibario.png" alt="Caderno de Silabário"></div><div class="icone">🎵</div><h3>Silabário e seus Fonemas</h3><p>Aprenda as sílabas através dos sons de forma lúdica e super colorida.</p></div>
+      <div class="modulo m5"><div class="modulo-img"><img src="images/silabas.png" alt="Caderno de Sílabas"></div><div class="icone">📝</div><h3>Sílabas Simples e Complexas</h3><p>As sílabas mais importantes para a alfabetização, abordadas passo a passo.</p></div>
+      <div class="modulo m6"><div class="modulo-img"><img src="images/formando-palavras.png" alt="Caderno Formando Palavras"></div><div class="icone">🧩</div><h3>Formando Palavras</h3><p>Palavras-chaves para a alfabetização. A criança aprende a formar palavras e ler.</p></div>
+      <div class="modulo m7"><div class="modulo-img"><img src="images/caligrafia.png" alt="Caderno de Caligrafia Inicial"></div><div class="icone">✍️</div><h3>Caligrafia Inicial</h3><p>Letras Bastão e Cursiva, as duas formas mais utilizadas no processo de alfabetização.</p></div>
+      <div class="modulo m8"><div class="modulo-img"><img src="images/cordenacao.png" alt="Caderno de Coordenação Motora"></div><div class="icone">✋</div><h3>Coordenação Motora Fina</h3><p>Reforço constante desta habilidade importantíssima para a escrita.</p></div>
+      <div class="modulo m9"><div class="modulo-img"><img src="images/matematica.png" alt="Caderno de Matemática"></div><div class="icone">🔢</div><h3>Matemática</h3><p>Numerais, tabuadas, somas e matemática em geral para deixar a criança craque!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TDAH ESPECIAIS -->
+<section class="especiais">
+  <div class="box">
+    <span class="emoji">💙</span>
+    <h2>Funciona também para crianças com TDAH e necessidades especiais</h2>
+    <p>O Kit Raposinha Sabida foi pensado para respeitar o ritmo de cada criança. Atividades visuais, lúdicas e progressivas que ajudam crianças com TDAH, autismo leve e outras especificidades a aprenderem de forma divertida e sem frustração.</p>
+  </div>
+</section>
+
+<!-- BÔNUS -->
+<section class="bonus">
+  <div class="bonus-box">
+    <span class="bonus-tag">🎁 5 BÔNUS EXCLUSIVOS</span>
+    <h2>E ainda leva 5 presentes grátis</h2>
+    <p class="intro">Adquirindo o Kit HOJE você recebe estes bônus que vão potencializar o aprendizado:</p>
+    <div class="bonus-list">
+      <div class="bonus-item"><div class="check">✓</div><div><strong>Bônus 1: Apostila de Português</strong><small>Reforça a habilidade mais importante da alfabetização</small><span class="valor">Valor R$ 47</span></div></div>
+      <div class="bonus-item"><div class="check">✓</div><div><strong>Bônus 2: Frases e Textos</strong><small>Kit completo para o desenvolvimento da leitura</small><span class="valor">Valor R$ 37</span></div></div>
+      <div class="bonus-item"><div class="check">✓</div><div><strong>Bônus 3: Jogos Didáticos</strong><small>Aprendizado divertido com murais e jogos alfabéticos</small><span class="valor">Valor R$ 27</span></div></div>
+      <div class="bonus-item"><div class="check">✓</div><div><strong>Bônus 4: Grupo VIP no WhatsApp</strong><small>Conteúdos e atividades gratuitas toda semana</small><span class="valor">Valor R$ 47</span></div></div>
+      <div class="bonus-item"><div class="check">✓</div><div><strong>Bônus 5: Surpresa Especial 🎉</strong><small>Um presente que você só descobre ao receber o kit</small><span class="valor">Valor R$ 39</span></div></div>
+    </div>
+    <div class="bonus-soma">
+      Só em bônus você leva:
+      <span class="total">R$ 197,00</span>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos">
+  <div class="container">
+    <h2 class="section-title">Mães e professoras aprovam ❤️</h2>
+    <p class="section-sub">Resultados reais de quem já usa o Kit Raposinha Sabida no dia a dia</p>
+    <div class="deps-grid">
+      <div class="dep">
+        <div class="estrelas">★★★★★</div>
+        <p>"Cida adorou o kit de atividades, minha filha tem 4 anos e está na pré-escola. Com o estímulo certo ela está se desenvolvendo muito rápido! Melhor compra. 😍 Parabéns pelo material!"</p>
+        <div class="quem"><div class="avatar">C</div><div><strong>Cida</strong><small>Mãe • verificado pelo WhatsApp</small></div></div>
+      </div>
+      <div class="dep">
+        <div class="estrelas">★★★★★</div>
+        <p>"Boa noite, passando pra contar que estou encantada com o capricho das atividades, minha filha está adorando! Já indiquei pras mães dos coleguinhas dela 😊"</p>
+        <div class="quem"><div class="avatar">A</div><div><strong>Angélica</strong><small>Mãe • verificado pelo WhatsApp</small></div></div>
+      </div>
+      <div class="dep">
+        <div class="estrelas">★★★★★</div>
+        <p>"Oi, tudo bem? Preciso te agradecer, o material é muito bom, super simples de fazer com as crianças. Eles estão adorando!"</p>
+        <div class="quem"><div class="avatar">M</div><div><strong>Marília</strong><small>Mãe • verificado pelo WhatsApp</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="oferta" id="oferta">
+  <div class="container">
+    <div class="contador">⏰ Restam apenas <strong id="vagas-oferta">7</strong> vagas hoje por R$1,99</div>
+    <h2 class="section-title" style="color:white">Garanta o seu agora 🚀</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,.85)">Mais de 625 famílias já aproveitaram esta oferta hoje</p>
+
+    <!-- ESTADO 1: DUAS OPÇÕES (COMPLETO R$16,99 + BÁSICO R$1,99) -->
+    <div id="estado-1">
+      <div class="dois-cards">
+
+        <!-- KIT COMPLETO R$16,99 -->
+        <div class="oferta-card card-completo">
+          <div class="tag-recomendado">⭐ MAIS ESCOLHIDO</div>
+          <div class="selo"><strong>KIT</strong>COMPLETO</div>
+          <h2>Kit Raposinha Sabida COMPLETO</h2>
+          <p class="sub-card">Tudo incluso + bônus exclusivos</p>
+          <ul class="lista-card">
+            <li>+2.750 atividades de alfabetização</li>
+            <li>9 cadernos completos</li>
+            <li>5 bônus exclusivos (R$197 grátis)</li>
+            <li>Grupo VIP no WhatsApp</li>
+            <li>Acesso vitalício + atualizações</li>
+            <li>Suporte prioritário</li>
+          </ul>
+          <div class="de">De R$ 197,00</div>
+          <div class="por">por apenas</div>
+          <div class="preco-grande"><small>R$</small>16<small>,99</small></div>
+          <p class="parcelas">pagamento único • acesso imediato</p>
+          <a href="#" class="cta">🛒 Quero o Kit Completo</a>
+          <div class="garantia">
+            <div class="gar-selo"><b>7</b><small>DIAS</small></div>
+            <p><strong>Garantia incondicional</strong>Se não gostar, devolvemos 100% do valor em até 7 dias.</p>
+          </div>
+        </div>
+
+        <!-- KIT BÁSICO R$1,99 -->
+        <div class="oferta-card card-basico" id="card-1-99">
+          <div class="selo selo-promo"><strong>SÓ</strong>HOJE</div>
+          <h2>Kit Raposinha Sabida BÁSICO</h2>
+          <p class="sub-card">Versão reduzida de entrada</p>
+          <ul class="lista-card">
+            <li>250 atividades selecionadas</li>
+            <li>Material de alfabetização</li>
+            <li class="off">Sem os 5 bônus exclusivos</li>
+            <li class="off">Sem grupo VIP no WhatsApp</li>
+            <li class="off">Sem acesso vitalício</li>
+          </ul>
+          <div class="de">De R$ 47,00</div>
+          <div class="por">oferta relâmpago</div>
+          <div class="preco-grande"><small>R$</small>1<small>,99</small></div>
+          <p class="parcelas">⚠️ vagas limitadas — só hoje</p>
+          <a href="#" class="cta cta-vermelho" onclick="esgotar(event)">🛒 Quero Pagar R$1,99</a>
+          <div class="aviso-basico">⚠️ Versão limitada. Para ter acesso a tudo, escolha o Kit Completo.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ESTADO 2: ESGOTADO + UPSELL R$9,97 -->
+    <div class="oferta-card hidden" id="card-9-97">
+      <div class="selo"><strong>OFERTA</strong>ESPECIAL</div>
+      <div class="esgotado-aviso">⚠️ As vagas de R$1,99 acabaram de esgotar! Mas conseguimos liberar uma oferta especial para você...</div>
+      <h2>Kit Completo + Bônus</h2>
+      <p class="sub-card">Última chance — oferta válida só nesta tela</p>
+      <ul class="lista-card">
+        <li>+2.750 atividades de alfabetização</li>
+        <li>9 cadernos completos</li>
+        <li>5 bônus exclusivos (R$197 grátis)</li>
+        <li>Grupo VIP no WhatsApp</li>
+        <li>Acesso vitalício e atualizações</li>
+      </ul>
+      <div class="de">De R$ 197,00</div>
+      <div class="por">oferta especial só hoje</div>
+      <div class="preco-grande"><small>R$</small>9<small>,97</small></div>
+      <p class="parcelas">pagamento único • acesso imediato</p>
+      <a href="#" class="cta">🛒 Garantir Por R$9,97</a>
+      <div class="garantia">
+        <div class="gar-selo"><b>7</b><small>DIAS</small></div>
+        <p><strong>Garantia incondicional</strong>Se não gostar, devolvemos 100% do valor em até 7 dias, sem perguntas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <h2 class="section-title">Perguntas frequentes</h2>
+    <p class="section-sub">Tirando as últimas dúvidas antes da sua decisão</p>
+    <div class="faq-list">
+      <details class="faq-item"><summary>Como o kit é entregue?</summary><p>É 100% digital em PDF. Após a confirmação do pagamento, você recebe o link de acesso no seu e-mail e WhatsApp imediatamente.</p></details>
+      <details class="faq-item"><summary>Posso parcelar?</summary><p>Como o valor é simbólico (R$1,99), o pagamento é à vista no Pix ou cartão. Sem complicações.</p></details>
+      <details class="faq-item"><summary>Para qual idade é indicado?</summary><p>Crianças de 4 a 7 anos em fase de alfabetização. Também funciona para crianças mais velhas com dificuldade de aprendizagem.</p></details>
+      <details class="faq-item"><summary>Funciona para crianças com TDAH ou autismo?</summary><p>Sim! O material foi pensado para respeitar o ritmo de cada criança, com atividades visuais e progressivas que ajudam casos de TDAH e autismo leve.</p></details>
+      <details class="faq-item"><summary>Está de acordo com a BNCC?</summary><p>Sim, todas as +2.750 atividades seguem as diretrizes da Base Nacional Comum Curricular.</p></details>
+      <details class="faq-item"><summary>Preciso ter impressora?</summary><p>O ideal é imprimir, mas você também pode usar no tablet ou levar os PDFs em uma gráfica de bairro (sai bem barato).</p></details>
+      <details class="faq-item"><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia incondicional. Se não gostar por qualquer motivo, basta enviar um e-mail e devolvemos 100% do valor.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">🦊 Raposinha Sabida</div>
+  <p style="color:var(--amarelo);font-weight:700;margin-bottom:8px">Aprender Brincando</p>
+  <p>© 2026 Todos os direitos reservados</p>
+  <p>Suporte: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8be8e4e5ffeaffe4cbeae7edeae0e2eff8a5e8e4e6a5e9f9">[email&#160;protected]</a></p>
+  <p class="legal">Política de Privacidade • Termos de Uso • Este produto não garante resultados, pois depende exclusivamente do esforço e dedicação na aplicação do material com a criança.</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Contador de vagas decrescente (simula urgência real)
+let vagas = 7;
+function atualizarVagas(){
+  document.getElementById('vagas-topo').textContent = vagas;
+  document.getElementById('vagas-oferta').textContent = vagas;
+}
+// Diminui 1 vaga a cada 45-90 segundos
+setInterval(()=>{
+  if(vagas > 2){
+    vagas--;
+    atualizarVagas();
+  }
+}, 60000);
+
+// Função para "esgotar" a oferta R$1,99 e mostrar upsell R$9,97
+function esgotar(e){
+  e.preventDefault();
+  document.getElementById('estado-1').classList.add('hidden');
+  document.getElementById('card-9-97').classList.remove('hidden');
+  document.getElementById('vagas-topo').parentElement.innerHTML = '⚠️ <strong>VAGAS ESGOTADAS</strong> — Última chance: oferta especial liberada ⚠️';
+  document.queryS
