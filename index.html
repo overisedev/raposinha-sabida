@@ -741,10 +741,69 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
   flex-shrink:0;
 }
 
+/* ====== RESPONSIVIDADE MOBILE ====== */
+
+/* Barra de urgência — desktop mostra tudo, mobile mostra versão curta */
+.urg-mobile{display:none}
+.urg-desktop{display:inline}
+.urg-blink{display:inline-block;animation:pulse 1.5s infinite}
+
+/* Raposinha flutuante — reduz em tablet, some em mobile pequeno */
 @media(max-width:820px){
-  .raposinha-flutuante{width:60px;top:-5px;right:-5px}
+  .raposinha-flutuante{width:70px;top:-5px;right:-5px}
   .cta-icon{height:30px}
   .bonus-img{width:50px;height:70px}
+
+  /* Cards da oferta — mais espaço entre eles */
+  .dois-cards{gap:40px}
+  .card-completo{transform:none;border-width:4px !important}
+  .oferta-card{margin-bottom:16px}
+
+  /* Passos como funciona */
+  .passo{padding:24px 20px}
+  .passo .num{width:40px;height:40px;font-size:22px;top:-20px}
+
+  /* Depoimentos — um por linha */
+  .deps-grid{grid-template-columns:1fr}
+  .dep{padding:20px;margin-bottom:4px}
+  .dep p{font-size:15px}
+
+  /* Padding lateral das seções */
+  .hero{padding:40px 20px 60px}
+  .solucao,.bonus,.depoimentos,.faq,.dor,.como{padding-left:20px;padding-right:20px}
+
+  /* Títulos de seção */
+  .section-title{font-size:clamp(22px,5vw,28px)}
+}
+
+@media(max-width:600px){
+  /* Barra de urgência compacta */
+  .urgencia-bar{padding:8px 12px;font-size:11px}
+  .urg-desktop{display:none}
+  .urg-mobile{display:inline}
+  .urg-raposinha{height:22px}
+
+  /* Bônus miniaturas menores */
+  .bonus-img{width:50px;height:70px}
+  .bonus-item{gap:10px}
+
+  /* CTAs dedo-friendly */
+  .cta{min-height:52px;padding:16px 24px;font-size:16px}
+
+  /* Textos de parágrafo mínimo 15px */
+  p,.dep p,.passo p,.dor-card p,.modulo p,.garantia p,.bonus-item small{font-size:15px}
+
+  /* Padding lateral */
+  .especiais,.oferta,.numeros{padding-left:20px;padding-right:20px}
+  .bonus-box{padding:40px 20px}
+
+  /* Títulos máximo 28px */
+  .section-title{font-size:28px !important}
+}
+
+@media(max-width:480px){
+  /* Esconde raposinha flutuante em telas muito pequenas */
+  .raposinha-flutuante{display:none}
 }
 </style>
 </head>
@@ -752,7 +811,9 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
 
 <!-- BARRA URGÊNCIA -->
 <div class="urgencia-bar">
-  <img src="images/raposinha-oficial.png" class="urg-raposinha" alt=""> ⚡ <span>OFERTA RELÂMPAGO</span> — Apenas <strong id="vagas-topo">7</strong> vagas restantes hoje por R$1,99 ⚡
+  <img src="images/raposinha-oficial.png" class="urg-raposinha" alt="">
+  <span class="urg-desktop">⚡ <span class="urg-blink">OFERTA RELÂMPAGO</span> — Apenas <strong id="vagas-topo">7</strong> vagas restantes hoje por R$1,99 ⚡</span>
+  <span class="urg-mobile">⚡ Apenas <strong id="vagas-topo-mobile">7</strong> vagas hoje por R$1,99 ⚡</span>
 </div>
 
 <!-- HERO -->
@@ -1026,6 +1087,7 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
 let vagas = 7;
 function atualizarVagas(){
   document.getElementById('vagas-topo').textContent = vagas;
+  document.getElementById('vagas-topo-mobile').textContent = vagas;
   document.getElementById('vagas-oferta').textContent = vagas;
 }
 // Diminui 1 vaga a cada 45-90 segundos
