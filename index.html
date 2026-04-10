@@ -813,13 +813,18 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
 /* ====== MODAL ESGOTADO ====== */
 .modal-overlay{
   position:fixed;inset:0;
-  background:rgba(0,0,0,.75);
+  background:rgba(0,0,0,.8);
   z-index:9999;
-  display:flex;align-items:center;justify-content:center;
-  padding:16px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:24px 16px 40px;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
   opacity:0;
   pointer-events:none;
   transition:opacity .3s ease;
+  box-sizing:border-box;
 }
 .modal-overlay.ativo{
   opacity:1;
@@ -829,22 +834,26 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
   background:white;
   border-radius:28px;
   border:5px solid var(--azul-escuro);
-  box-shadow:12px 12px 0 var(--azul-escuro);
-  max-width:520px;
+  box-shadow:8px 8px 0 var(--azul-escuro);
+  max-width:480px;
   width:100%;
-  overflow:hidden;
+  overflow:visible;
   transform:scale(.92) translateY(20px);
   transition:transform .3s ease;
   position:relative;
+  flex-shrink:0;
+  margin-top:50px;
 }
 .modal-overlay.ativo .modal{
   transform:scale(1) translateY(0);
 }
 .modal-topo{
   background:var(--vermelho);
-  padding:18px 24px;
+  padding:18px 24px 20px;
   text-align:center;
   border-bottom:4px solid var(--azul-escuro);
+  border-radius:22px 22px 0 0;
+  position:relative;
 }
 .modal-topo .alerta{
   font-family:'Fredoka',sans-serif;
@@ -852,27 +861,27 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
   font-weight:700;
   text-transform:uppercase;
   letter-spacing:2px;
-  color:rgba(255,255,255,.85);
-  margin-bottom:4px;
+  color:rgba(255,255,255,.9);
+  margin-bottom:6px;
   display:block;
 }
 .modal-topo h3{
   font-family:'Fredoka',sans-serif;
-  font-size:clamp(20px,4vw,26px);
+  font-size:clamp(18px,4vw,24px);
   color:white;
-  line-height:1.15;
+  line-height:1.2;
 }
 .modal-corpo{
-  padding:28px 28px 20px;
+  padding:20px 24px 24px;
   text-align:center;
 }
 .modal-raposinha{
-  width:90px;
-  margin:-54px auto 12px;
+  width:100px;
   display:block;
-  filter:drop-shadow(0 4px 8px rgba(0,0,0,.25));
+  margin:-70px auto 14px;
+  filter:drop-shadow(0 4px 10px rgba(0,0,0,.3));
   position:relative;
-  z-index:2;
+  z-index:10;
 }
 .modal-badge{
   display:inline-block;
@@ -883,46 +892,47 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
   padding:5px 14px;
   border-radius:999px;
   border:2px solid var(--azul-escuro);
-  margin-bottom:14px;
+  margin-bottom:12px;
   text-transform:uppercase;
   letter-spacing:1px;
 }
 .modal-titulo{
   font-family:'Fredoka',sans-serif;
-  font-size:clamp(22px,4vw,28px);
+  font-size:clamp(20px,4vw,26px);
   color:var(--azul-escuro);
   margin-bottom:8px;
-  line-height:1.15;
+  line-height:1.2;
 }
 .modal-sub{
   font-size:14px;
   color:#555;
-  margin-bottom:20px;
+  margin-bottom:16px;
+  line-height:1.5;
 }
 .modal-lista{
   background:var(--creme);
   border:2px solid var(--azul-escuro);
-  border-radius:16px;
-  padding:16px 20px;
+  border-radius:14px;
+  padding:12px 16px;
   text-align:left;
-  margin-bottom:20px;
+  margin-bottom:16px;
 }
 .modal-lista li{
   list-style:none;
-  font-size:14px;
-  padding:5px 0;
+  font-size:13px;
+  padding:4px 0;
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:8px;
   color:var(--texto);
 }
-.modal-lista li::before{content:"✅";font-size:15px}
+.modal-lista li::before{content:"✅";font-size:14px;flex-shrink:0}
 .modal-preco-bloco{
-  margin-bottom:20px;
+  margin-bottom:16px;
 }
 .modal-de{
-  font-size:14px;
-  color:#999;
+  font-size:13px;
+  color:#aaa;
   text-decoration:line-through;
 }
 .modal-por{
@@ -932,12 +942,12 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
 }
 .modal-preco{
   font-family:'Fredoka',sans-serif;
-  font-size:64px;
+  font-size:60px;
   color:var(--vermelho);
   font-weight:700;
   line-height:1;
 }
-.modal-preco small{font-size:26px;vertical-align:top;color:var(--azul-escuro)}
+.modal-preco small{font-size:24px;vertical-align:top;color:var(--azul-escuro)}
 .modal-urgencia{
   background:var(--azul-escuro);
   color:var(--amarelo);
@@ -945,7 +955,7 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
   font-weight:800;
   padding:7px 14px;
   border-radius:10px;
-  margin-bottom:18px;
+  margin-bottom:16px;
   display:inline-block;
   animation:pulse 1.5s infinite;
 }
@@ -957,8 +967,8 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
   color:white;
   font-family:'Fredoka',sans-serif;
   font-weight:700;
-  font-size:18px;
-  padding:18px 24px;
+  font-size:16px;
+  padding:16px 20px;
   border-radius:999px;
   text-decoration:none;
   border:4px solid var(--azul-escuro);
@@ -969,43 +979,38 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
   transition:all .15s ease;
   margin-bottom:12px;
   animation:wiggle 2s ease-in-out infinite;
+  box-sizing:border-box;
 }
 .modal-cta:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--azul-escuro);animation:none}
-.modal-cta img{height:36px;flex-shrink:0}
+.modal-cta img{height:32px;flex-shrink:0}
 .modal-recusar{
   display:block;
   font-size:11px;
   color:#aaa;
   text-decoration:underline;
   cursor:pointer;
-  margin-top:4px;
-  padding-bottom:8px;
+  padding-bottom:4px;
 }
 .modal-recusar:hover{color:#777}
 .modal-fechar{
-  position:absolute;top:12px;right:16px;
-  background:rgba(255,255,255,.2);
+  position:absolute;top:10px;right:12px;
+  background:rgba(255,255,255,.25);
   border:none;
   color:white;
-  font-size:22px;
+  font-size:20px;
   line-height:1;
   cursor:pointer;
   border-radius:50%;
-  width:32px;height:32px;
+  width:30px;height:30px;
   display:flex;align-items:center;justify-content:center;
   font-weight:700;
+  z-index:5;
 }
-.modal-fechar:hover{background:rgba(255,255,255,.4)}
+.modal-fechar:hover{background:rgba(255,255,255,.45)}
 .modal-garantia-mini{
   font-size:11px;
   color:#888;
-  margin-top:8px;
-}
-
-@media(max-width:480px){
-  .modal-corpo{padding:20px 18px 16px}
-  .modal-preco{font-size:52px}
-  .modal-cta{font-size:16px;padding:16px 18px}
+  margin-top:10px;
 }
 </style>
 </head>
