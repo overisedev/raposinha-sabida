@@ -809,6 +809,204 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
   /* Esconde raposinha flutuante em telas muito pequenas */
   .raposinha-flutuante{display:none}
 }
+
+/* ====== MODAL ESGOTADO ====== */
+.modal-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.75);
+  z-index:9999;
+  display:flex;align-items:center;justify-content:center;
+  padding:16px;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .3s ease;
+}
+.modal-overlay.ativo{
+  opacity:1;
+  pointer-events:all;
+}
+.modal{
+  background:white;
+  border-radius:28px;
+  border:5px solid var(--azul-escuro);
+  box-shadow:12px 12px 0 var(--azul-escuro);
+  max-width:520px;
+  width:100%;
+  overflow:hidden;
+  transform:scale(.92) translateY(20px);
+  transition:transform .3s ease;
+  position:relative;
+}
+.modal-overlay.ativo .modal{
+  transform:scale(1) translateY(0);
+}
+.modal-topo{
+  background:var(--vermelho);
+  padding:18px 24px;
+  text-align:center;
+  border-bottom:4px solid var(--azul-escuro);
+}
+.modal-topo .alerta{
+  font-family:'Fredoka',sans-serif;
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:rgba(255,255,255,.85);
+  margin-bottom:4px;
+  display:block;
+}
+.modal-topo h3{
+  font-family:'Fredoka',sans-serif;
+  font-size:clamp(20px,4vw,26px);
+  color:white;
+  line-height:1.15;
+}
+.modal-corpo{
+  padding:28px 28px 20px;
+  text-align:center;
+}
+.modal-raposinha{
+  width:90px;
+  margin:-54px auto 12px;
+  display:block;
+  filter:drop-shadow(0 4px 8px rgba(0,0,0,.25));
+  position:relative;
+  z-index:2;
+}
+.modal-badge{
+  display:inline-block;
+  background:var(--amarelo);
+  color:var(--azul-escuro);
+  font-weight:800;
+  font-size:12px;
+  padding:5px 14px;
+  border-radius:999px;
+  border:2px solid var(--azul-escuro);
+  margin-bottom:14px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+}
+.modal-titulo{
+  font-family:'Fredoka',sans-serif;
+  font-size:clamp(22px,4vw,28px);
+  color:var(--azul-escuro);
+  margin-bottom:8px;
+  line-height:1.15;
+}
+.modal-sub{
+  font-size:14px;
+  color:#555;
+  margin-bottom:20px;
+}
+.modal-lista{
+  background:var(--creme);
+  border:2px solid var(--azul-escuro);
+  border-radius:16px;
+  padding:16px 20px;
+  text-align:left;
+  margin-bottom:20px;
+}
+.modal-lista li{
+  list-style:none;
+  font-size:14px;
+  padding:5px 0;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--texto);
+}
+.modal-lista li::before{content:"✅";font-size:15px}
+.modal-preco-bloco{
+  margin-bottom:20px;
+}
+.modal-de{
+  font-size:14px;
+  color:#999;
+  text-decoration:line-through;
+}
+.modal-por{
+  font-size:13px;
+  color:#555;
+  margin:2px 0;
+}
+.modal-preco{
+  font-family:'Fredoka',sans-serif;
+  font-size:64px;
+  color:var(--vermelho);
+  font-weight:700;
+  line-height:1;
+}
+.modal-preco small{font-size:26px;vertical-align:top;color:var(--azul-escuro)}
+.modal-urgencia{
+  background:var(--azul-escuro);
+  color:var(--amarelo);
+  font-size:12px;
+  font-weight:800;
+  padding:7px 14px;
+  border-radius:10px;
+  margin-bottom:18px;
+  display:inline-block;
+  animation:pulse 1.5s infinite;
+}
+.modal-cta{
+  display:flex;align-items:center;justify-content:center;
+  gap:10px;
+  width:100%;
+  background:var(--verde);
+  color:white;
+  font-family:'Fredoka',sans-serif;
+  font-weight:700;
+  font-size:18px;
+  padding:18px 24px;
+  border-radius:999px;
+  text-decoration:none;
+  border:4px solid var(--azul-escuro);
+  box-shadow:5px 5px 0 var(--azul-escuro);
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  cursor:pointer;
+  transition:all .15s ease;
+  margin-bottom:12px;
+  animation:wiggle 2s ease-in-out infinite;
+}
+.modal-cta:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--azul-escuro);animation:none}
+.modal-cta img{height:36px;flex-shrink:0}
+.modal-recusar{
+  display:block;
+  font-size:11px;
+  color:#aaa;
+  text-decoration:underline;
+  cursor:pointer;
+  margin-top:4px;
+  padding-bottom:8px;
+}
+.modal-recusar:hover{color:#777}
+.modal-fechar{
+  position:absolute;top:12px;right:16px;
+  background:rgba(255,255,255,.2);
+  border:none;
+  color:white;
+  font-size:22px;
+  line-height:1;
+  cursor:pointer;
+  border-radius:50%;
+  width:32px;height:32px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;
+}
+.modal-fechar:hover{background:rgba(255,255,255,.4)}
+.modal-garantia-mini{
+  font-size:11px;
+  color:#888;
+  margin-top:8px;
+}
+
+@media(max-width:480px){
+  .modal-corpo{padding:20px 18px 16px}
+  .modal-preco{font-size:52px}
+  .modal-cta{font-size:16px;padding:16px 18px}
+}
 </style>
 </head>
 <body>
@@ -1005,7 +1203,7 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
           <div class="por">por apenas</div>
           <div class="preco-grande"><small>R$</small>16<small>,99</small></div>
           <p class="parcelas">pagamento único • acesso imediato</p>
-          <a href="#" class="cta"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Quero o Kit Completo</a>
+          <a href="https://ggcheckout.app/checkout/v5/BiFIouJNySXR4SgKpLPa" class="cta" target="_blank" rel="noopener"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Quero o Kit Completo</a>
           <div class="garantia">
             <div class="gar-selo"><b>7</b><small>DIAS</small></div>
             <p><strong>Garantia incondicional</strong>Se não gostar, devolvemos 100% do valor em até 7 dias.</p>
@@ -1052,7 +1250,7 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
       <div class="por">oferta especial só hoje</div>
       <div class="preco-grande"><small>R$</small>9<small>,97</small></div>
       <p class="parcelas">pagamento único • acesso imediato</p>
-      <a href="#" class="cta"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Garantir Por R$9,97</a>
+      <a href="https://ggcheckout.app/checkout/v5/BiFIouJNySXR4SgKpLPa" class="cta" target="_blank" rel="noopener"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Garantir Por R$9,97</a>
       <div class="garantia">
         <div class="gar-selo"><b>7</b><small>DIAS</small></div>
         <p><strong>Garantia incondicional</strong>Se não gostar, devolvemos 100% do valor em até 7 dias, sem perguntas.</p>
@@ -1078,6 +1276,47 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
   </div>
 </section>
 
+<!-- MODAL PLANO ESGOTADO -->
+<div class="modal-overlay" id="modal-esgotado" onclick="fecharModalFora(event)">
+  <div class="modal">
+    <div class="modal-topo">
+      <button class="modal-fechar" onclick="fecharModal()">✕</button>
+      <span class="alerta">⚠️ Atenção — vagas esgotadas</span>
+      <h3>O plano de R$1,99 acabou de esgotar!</h3>
+    </div>
+    <div class="modal-corpo">
+      <img src="images/raposinha-fofa.png" class="modal-raposinha" alt="Raposinha">
+      <span class="modal-badge">🎉 Oferta exclusiva liberada pra você</span>
+      <h2 class="modal-titulo">Mas temos uma surpresa:<br>Kit Completo com desconto especial!</h2>
+      <p class="modal-sub">Como você demonstrou interesse, liberamos o Kit Completo por um preço que <strong>nunca oferecemos antes</strong>. Só nesta tela.</p>
+
+      <ul class="modal-lista">
+        <li>+2.750 atividades de alfabetização</li>
+        <li>9 cadernos completos (do zero ao lendo)</li>
+        <li>5 bônus exclusivos (valor R$197)</li>
+        <li>Grupo VIP no WhatsApp</li>
+        <li>Acesso vitalício + atualizações</li>
+        <li>Entrega imediata no e-mail</li>
+      </ul>
+
+      <div class="modal-preco-bloco">
+        <div class="modal-de">De R$ 197,00</div>
+        <div class="modal-por">hoje, só aqui, por apenas</div>
+        <div class="modal-preco"><small>R$</small>11<small>,97</small></div>
+      </div>
+
+      <div class="modal-urgencia">⏳ Promoção válida apenas enquanto esta janela estiver aberta</div>
+
+      <a href="https://ggcheckout.app/checkout/v5/BiFIouJNySXR4SgKpLPa" class="modal-cta" target="_blank" rel="noopener">
+        <img src="images/raposinha-acenando.png" alt="">
+        Sim! Quero o Kit Completo por R$11,97
+      </a>
+      <span class="modal-recusar" onclick="fecharModal()">Não, prefiro perder esta oferta e pagar mais caro depois</span>
+      <p class="modal-garantia-mini">🔒 Compra 100% segura • 7 dias de garantia incondicional</p>
+    </div>
+  </div>
+</div>
+
 <footer>
   <div class="logo"><img src="images/raposinha-oficial.png" class="footer-logo-img" alt=""> Raposinha Sabida</div>
   <p style="color:var(--amarelo);font-weight:700;margin-bottom:8px">Aprender Brincando</p>
@@ -1102,10 +1341,23 @@ setInterval(()=>{
   }
 }, 60000);
 
-// Função para "esgotar" a oferta R$1,99 e mostrar upsell R$9,97
+// Função para "esgotar" a oferta R$1,99 e abrir o modal
 function esgotar(e){
   e.preventDefault();
-  document.getElementById('estado-1').classList.add('hidden');
-  document.getElementById('card-9-97').classList.remove('hidden');
-  document.getElementById('vagas-topo').parentElement.innerHTML = '⚠️ <strong>VAGAS ESGOTADAS</strong> — Última chance: oferta especial liberada ⚠️';
-  document.queryS
+  document.getElementById('modal-esgotado').classList.add('ativo');
+  document.body.style.overflow = 'hidden';
+}
+
+function fecharModal(){
+  document.getElementById('modal-esgotado').classList.remove('ativo');
+  document.body.style.overflow = '';
+}
+
+function fecharModalFora(e){
+  if(e.target === document.getElementById('modal-esgotado')){
+    fecharModal();
+  }
+}
+</script>
+</body>
+</html>
