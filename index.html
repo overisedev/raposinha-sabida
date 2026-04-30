@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kit Raposinha Sabida — Alfabetize seu filho por R$1,99</title>
-<!-- Meta Pixel -->
+<!-- ============================================ -->
+<!-- META PIXEL — Facebook/Instagram Ads          -->
+<!-- ID: 1260883809080709                         -->
+<!-- ============================================ -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -19,15 +22,23 @@ fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=1260883809080709&ev=PageView&noscript=1"/></noscript>
-<!-- Pixel Utmify -->
+
+<!-- ============================================ -->
+<!-- UTMIFY PIXEL — Tracking de conversões        -->
+<!-- ID: 687c11e3a04e4348ef2a8d8d (TESTE)         -->
+<!-- ============================================ -->
 <script>
-  window.pixelId = "69d961048482920e5f4d752c";
+  window.pixelId = "687c11e3a04e4348ef2a8d8d";
   var a = document.createElement("script");
   a.setAttribute("async", "");
   a.setAttribute("defer", "");
   a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
   document.head.appendChild(a);
 </script>
+
+<!-- ============================================ -->
+<!-- UTMIFY UTMs — Captura e propagação ao checkout -->
+<!-- ============================================ -->
 <script
   src="https://cdn.utmify.com.br/scripts/utms/latest.js"
   data-utmify-prevent-xcod-sck
@@ -632,18 +643,6 @@ h1,h2,h3,.display{font-family:'Fredoka',sans-serif;line-height:1.1}
 .garantia p{font-size:13px;color:#444}
 .garantia strong{color:var(--azul-escuro);display:block;font-size:14px;margin-bottom:2px}
 
-/* Estado: ESGOTADO + UPSELL */
-.esgotado-aviso{
-  background:var(--vermelho);
-  color:white;
-  padding:14px;
-  border-radius:12px;
-  font-weight:800;
-  margin-bottom:20px;
-  font-size:14px;
-}
-.hidden{display:none}
-
 /* Layout dois cards */
 .dois-cards{
   display:grid;
@@ -836,209 +835,6 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
   /* Esconde raposinha flutuante em telas muito pequenas */
   .raposinha-flutuante{display:none}
 }
-
-/* ====== MODAL ESGOTADO ====== */
-.modal-overlay{
-  position:fixed;inset:0;
-  background:rgba(0,0,0,.8);
-  z-index:9999;
-  display:flex;
-  align-items:flex-start;
-  justify-content:center;
-  padding:24px 16px 40px;
-  overflow-y:auto;
-  -webkit-overflow-scrolling:touch;
-  opacity:0;
-  pointer-events:none;
-  transition:opacity .3s ease;
-  box-sizing:border-box;
-}
-.modal-overlay.ativo{
-  opacity:1;
-  pointer-events:all;
-}
-.modal{
-  background:white;
-  border-radius:28px;
-  border:5px solid var(--azul-escuro);
-  box-shadow:8px 8px 0 var(--azul-escuro);
-  max-width:480px;
-  width:100%;
-  overflow:visible;
-  transform:scale(.92) translateY(20px);
-  transition:transform .3s ease;
-  position:relative;
-  flex-shrink:0;
-  margin-top:50px;
-}
-.modal-overlay.ativo .modal{
-  transform:scale(1) translateY(0);
-}
-.modal-topo{
-  background:var(--vermelho);
-  padding:18px 24px 20px;
-  text-align:center;
-  border-bottom:4px solid var(--azul-escuro);
-  border-radius:22px 22px 0 0;
-  position:relative;
-}
-.modal-topo .alerta{
-  font-family:'Fredoka',sans-serif;
-  font-size:13px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  color:rgba(255,255,255,.9);
-  margin-bottom:6px;
-  display:block;
-}
-.modal-topo h3{
-  font-family:'Fredoka',sans-serif;
-  font-size:clamp(18px,4vw,24px);
-  color:white;
-  line-height:1.2;
-}
-.modal-corpo{
-  padding:20px 24px 24px;
-  text-align:center;
-}
-.modal-raposinha{
-  width:100px;
-  display:block;
-  margin:-70px auto 14px;
-  filter:drop-shadow(0 4px 10px rgba(0,0,0,.3));
-  position:relative;
-  z-index:10;
-}
-.modal-badge{
-  display:inline-block;
-  background:var(--amarelo);
-  color:var(--azul-escuro);
-  font-weight:800;
-  font-size:12px;
-  padding:5px 14px;
-  border-radius:999px;
-  border:2px solid var(--azul-escuro);
-  margin-bottom:12px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-}
-.modal-titulo{
-  font-family:'Fredoka',sans-serif;
-  font-size:clamp(20px,4vw,26px);
-  color:var(--azul-escuro);
-  margin-bottom:8px;
-  line-height:1.2;
-}
-.modal-sub{
-  font-size:14px;
-  color:#555;
-  margin-bottom:16px;
-  line-height:1.5;
-}
-.modal-lista{
-  background:var(--creme);
-  border:2px solid var(--azul-escuro);
-  border-radius:14px;
-  padding:12px 16px;
-  text-align:left;
-  margin-bottom:16px;
-}
-.modal-lista li{
-  list-style:none;
-  font-size:13px;
-  padding:4px 0;
-  display:flex;
-  align-items:center;
-  gap:8px;
-  color:var(--texto);
-}
-.modal-lista li::before{content:"✅";font-size:14px;flex-shrink:0}
-.modal-preco-bloco{
-  margin-bottom:16px;
-}
-.modal-de{
-  font-size:13px;
-  color:#aaa;
-  text-decoration:line-through;
-}
-.modal-por{
-  font-size:13px;
-  color:#555;
-  margin:2px 0;
-}
-.modal-preco{
-  font-family:'Fredoka',sans-serif;
-  font-size:60px;
-  color:var(--vermelho);
-  font-weight:700;
-  line-height:1;
-}
-.modal-preco small{font-size:24px;vertical-align:top;color:var(--azul-escuro)}
-.modal-urgencia{
-  background:var(--azul-escuro);
-  color:var(--amarelo);
-  font-size:12px;
-  font-weight:800;
-  padding:7px 14px;
-  border-radius:10px;
-  margin-bottom:16px;
-  display:inline-block;
-  animation:pulse 1.5s infinite;
-}
-.modal-cta{
-  display:flex;align-items:center;justify-content:center;
-  gap:10px;
-  width:100%;
-  background:var(--verde);
-  color:white;
-  font-family:'Fredoka',sans-serif;
-  font-weight:700;
-  font-size:16px;
-  padding:16px 20px;
-  border-radius:999px;
-  text-decoration:none;
-  border:4px solid var(--azul-escuro);
-  box-shadow:5px 5px 0 var(--azul-escuro);
-  text-transform:uppercase;
-  letter-spacing:.5px;
-  cursor:pointer;
-  transition:all .15s ease;
-  margin-bottom:12px;
-  animation:wiggle 2s ease-in-out infinite;
-  box-sizing:border-box;
-}
-.modal-cta:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--azul-escuro);animation:none}
-.modal-cta img{height:32px;flex-shrink:0}
-.modal-recusar{
-  display:block;
-  font-size:11px;
-  color:#aaa;
-  text-decoration:underline;
-  cursor:pointer;
-  padding-bottom:4px;
-}
-.modal-recusar:hover{color:#777}
-.modal-fechar{
-  position:absolute;top:10px;right:12px;
-  background:rgba(255,255,255,.25);
-  border:none;
-  color:white;
-  font-size:20px;
-  line-height:1;
-  cursor:pointer;
-  border-radius:50%;
-  width:30px;height:30px;
-  display:flex;align-items:center;justify-content:center;
-  font-weight:700;
-  z-index:5;
-}
-.modal-fechar:hover{background:rgba(255,255,255,.45)}
-.modal-garantia-mini{
-  font-size:11px;
-  color:#888;
-  margin-top:10px;
-}
 </style>
 </head>
 <body>
@@ -1213,80 +1009,53 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
     <h2 class="section-title" style="color:white">Garanta o seu agora 🚀</h2>
     <p class="section-sub" style="color:rgba(255,255,255,.85)">Mais de 625 famílias já aproveitaram esta oferta hoje</p>
 
-    <!-- ESTADO 1: DUAS OPÇÕES (COMPLETO R$16,99 + BÁSICO R$1,99) -->
-    <div id="estado-1">
-      <div class="dois-cards">
+    <div class="dois-cards">
 
-        <!-- KIT COMPLETO R$16,99 -->
-        <div class="oferta-card card-completo">
-          <div class="tag-recomendado">⭐ MAIS ESCOLHIDO</div>
-          <div class="selo"><strong>KIT</strong>COMPLETO</div>
-          <h2>Kit Raposinha Sabida COMPLETO</h2>
-          <p class="sub-card">Tudo incluso + bônus exclusivos</p>
-          <ul class="lista-card">
-            <li>+2.750 atividades de alfabetização</li>
-            <li>9 cadernos completos</li>
-            <li>5 bônus exclusivos (R$197 grátis)</li>
-            <li>Grupo VIP no WhatsApp</li>
-            <li>Acesso vitalício + atualizações</li>
-            <li>Suporte prioritário</li>
-          </ul>
-          <div class="de">De R$ 197,00</div>
-          <div class="por">por apenas</div>
-          <div class="preco-grande"><small>R$</small>16<small>,99</small></div>
-          <p class="parcelas">pagamento único • acesso imediato</p>
-          <a href="https://ggcheckout.app/checkout/v5/BiFIouJNySXR4SgKpLPa" class="cta" target="_blank" rel="noopener"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Quero o Kit Completo</a>
-          <div class="garantia">
-            <div class="gar-selo"><b>7</b><small>DIAS</small></div>
-            <p><strong>Garantia incondicional</strong>Se não gostar, devolvemos 100% do valor em até 7 dias.</p>
-          </div>
+      <!-- KIT COMPLETO R$16,99 -->
+      <div class="oferta-card card-completo">
+        <div class="tag-recomendado">⭐ MAIS ESCOLHIDO</div>
+        <div class="selo"><strong>KIT</strong>COMPLETO</div>
+        <h2>Kit Raposinha Sabida COMPLETO</h2>
+        <p class="sub-card">Tudo incluso + bônus exclusivos</p>
+        <ul class="lista-card">
+          <li>+2.750 atividades de alfabetização</li>
+          <li>9 cadernos completos</li>
+          <li>5 bônus exclusivos (R$197 grátis)</li>
+          <li>Grupo VIP no WhatsApp</li>
+          <li>Acesso vitalício + atualizações</li>
+          <li>Suporte prioritário</li>
+        </ul>
+        <div class="de">De R$ 197,00</div>
+        <div class="por">por apenas</div>
+        <div class="preco-grande"><small>R$</small>16<small>,99</small></div>
+        <p class="parcelas">pagamento único • acesso imediato</p>
+        <a href="https://ggcheckout.app/checkout/v5/BiFIouJNySXR4SgKpLPa" class="cta" target="_blank" rel="noopener"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Quero o Kit Completo</a>
+        <div class="garantia">
+          <div class="gar-selo"><b>7</b><small>DIAS</small></div>
+          <p><strong>Garantia incondicional</strong>Se não gostar, devolvemos 100% do valor em até 7 dias.</p>
         </div>
-
-        <!-- KIT BÁSICO R$1,99 -->
-        <div class="oferta-card card-basico" id="card-1-99">
-          <div class="selo selo-promo"><strong>SÓ</strong>HOJE</div>
-          <h2>Kit Raposinha Sabida BÁSICO</h2>
-          <p class="sub-card">Versão reduzida de entrada</p>
-          <ul class="lista-card">
-            <li>250 atividades selecionadas</li>
-            <li>Material de alfabetização</li>
-            <li class="off">Sem os 5 bônus exclusivos</li>
-            <li class="off">Sem grupo VIP no WhatsApp</li>
-            <li class="off">Sem acesso vitalício</li>
-          </ul>
-          <div class="de">De R$ 47,00</div>
-          <div class="por">oferta relâmpago</div>
-          <div class="preco-grande"><small>R$</small>1<small>,99</small></div>
-          <p class="parcelas">⚠️ vagas limitadas — só hoje</p>
-          <a href="#" class="cta cta-vermelho" onclick="esgotar(event)"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Quero Pagar R$1,99</a>
-          <div class="aviso-basico">⚠️ Versão limitada. Para ter acesso a tudo, escolha o Kit Completo.</div>
-        </div>
-
       </div>
-    </div>
 
-    <!-- ESTADO 2: ESGOTADO + UPSELL R$9,97 -->
-    <div class="oferta-card hidden" id="card-9-97">
-      <div class="selo"><strong>OFERTA</strong>ESPECIAL</div>
-      <div class="esgotado-aviso">⚠️ As vagas de R$1,99 acabaram de esgotar! Mas conseguimos liberar uma oferta especial para você...</div>
-      <h2>Kit Completo + Bônus</h2>
-      <p class="sub-card">Última chance — oferta válida só nesta tela</p>
-      <ul class="lista-card">
-        <li>+2.750 atividades de alfabetização</li>
-        <li>9 cadernos completos</li>
-        <li>5 bônus exclusivos (R$197 grátis)</li>
-        <li>Grupo VIP no WhatsApp</li>
-        <li>Acesso vitalício e atualizações</li>
-      </ul>
-      <div class="de">De R$ 197,00</div>
-      <div class="por">oferta especial só hoje</div>
-      <div class="preco-grande"><small>R$</small>9<small>,97</small></div>
-      <p class="parcelas">pagamento único • acesso imediato</p>
-      <a href="https://ggcheckout.app/checkout/v5/YZwVXK8Lm3unzoZ6TCK5" class="cta" target="_blank" rel="noopener"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Garantir Por R$9,97</a>
-      <div class="garantia">
-        <div class="gar-selo"><b>7</b><small>DIAS</small></div>
-        <p><strong>Garantia incondicional</strong>Se não gostar, devolvemos 100% do valor em até 7 dias, sem perguntas.</p>
+      <!-- KIT BÁSICO R$1,99 -->
+      <div class="oferta-card card-basico" id="card-1-99">
+        <div class="selo selo-promo"><strong>SÓ</strong>HOJE</div>
+        <h2>Kit Raposinha Sabida BÁSICO</h2>
+        <p class="sub-card">Versão reduzida de entrada</p>
+        <ul class="lista-card">
+          <li>250 atividades selecionadas</li>
+          <li>Material de alfabetização</li>
+          <li class="off">Sem os 5 bônus exclusivos</li>
+          <li class="off">Sem grupo VIP no WhatsApp</li>
+          <li class="off">Sem acesso vitalício</li>
+        </ul>
+        <div class="de">De R$ 47,00</div>
+        <div class="por">oferta relâmpago</div>
+        <div class="preco-grande"><small>R$</small>1<small>,99</small></div>
+        <p class="parcelas">⚠️ vagas limitadas — só hoje</p>
+        <a href="https://ggcheckout.app/checkout/v5/BiFIouJNySXR4SgKpLPa" class="cta cta-vermelho" target="_blank" rel="noopener"><img src="images/raposinha-acenando.png" class="cta-icon" alt=""> Quero Pagar R$1,99</a>
+        <div class="aviso-basico">⚠️ Versão limitada. Para ter acesso a tudo, escolha o Kit Completo.</div>
       </div>
+
     </div>
   </div>
 </section>
@@ -1308,47 +1077,6 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
   </div>
 </section>
 
-<!-- MODAL PLANO ESGOTADO -->
-<div class="modal-overlay" id="modal-esgotado" onclick="fecharModalFora(event)">
-  <div class="modal">
-    <div class="modal-topo">
-      <button class="modal-fechar" onclick="fecharModal()">✕</button>
-      <span class="alerta">⚠️ Atenção — vagas esgotadas</span>
-      <h3>O plano de R$1,99 acabou de esgotar!</h3>
-    </div>
-    <div class="modal-corpo">
-      <img src="images/raposinha-fofa.png" class="modal-raposinha" alt="Raposinha">
-      <span class="modal-badge">🎉 Oferta exclusiva liberada pra você</span>
-      <h2 class="modal-titulo">Mas temos uma surpresa:<br>Kit Completo com desconto especial!</h2>
-      <p class="modal-sub">Como você demonstrou interesse, liberamos o Kit Completo por um preço que <strong>nunca oferecemos antes</strong>. Só nesta tela.</p>
-
-      <ul class="modal-lista">
-        <li>+2.750 atividades de alfabetização</li>
-        <li>9 cadernos completos (do zero ao lendo)</li>
-        <li>5 bônus exclusivos (valor R$197)</li>
-        <li>Grupo VIP no WhatsApp</li>
-        <li>Acesso vitalício + atualizações</li>
-        <li>Entrega imediata no e-mail</li>
-      </ul>
-
-      <div class="modal-preco-bloco">
-        <div class="modal-de">De R$ 197,00</div>
-        <div class="modal-por">hoje, só aqui, por apenas</div>
-        <div class="modal-preco"><small>R$</small>9<small>,84</small></div>
-      </div>
-
-      <div class="modal-urgencia">⏳ Promoção válida apenas enquanto esta janela estiver aberta</div>
-
-      <a href="https://ggcheckout.app/checkout/v5/YZwVXK8Lm3unzoZ6TCK5" class="modal-cta" target="_blank" rel="noopener">
-        <img src="images/raposinha-acenando.png" alt="">
-        Sim! Quero o Kit Completo por R$9,84
-      </a>
-      <span class="modal-recusar" onclick="fecharModal()">Não, prefiro perder esta oferta e pagar mais caro depois</span>
-      <p class="modal-garantia-mini">🔒 Compra 100% segura • 7 dias de garantia incondicional</p>
-    </div>
-  </div>
-</div>
-
 <footer>
   <div class="logo"><img src="images/raposinha-oficial.png" class="footer-logo-img" alt=""> Raposinha Sabida</div>
   <p style="color:var(--amarelo);font-weight:700;margin-bottom:8px">Aprender Brincando</p>
@@ -1357,7 +1085,8 @@ footer .legal{font-size:11px;opacity:.5;margin-top:14px;max-width:600px;margin-l
   <p class="legal">Política de Privacidade • Termos de Uso • Este produto não garante resultados, pois depende exclusivamente do esforço e dedicação na aplicação do material com a criança.</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
 // Meta Pixel — InitiateCheckout automático em todos os links de checkout
 document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('a[href*="ggcheckout"]').forEach(function(link){
@@ -1376,31 +1105,13 @@ function atualizarVagas(){
   document.getElementById('vagas-topo-mobile').textContent = vagas;
   document.getElementById('vagas-oferta').textContent = vagas;
 }
-// Diminui 1 vaga a cada 45-90 segundos
+// Diminui 1 vaga a cada 60 segundos
 setInterval(()=>{
   if(vagas > 2){
     vagas--;
     atualizarVagas();
   }
 }, 60000);
-
-// Função para "esgotar" a oferta R$1,99 e abrir o modal
-function esgotar(e){
-  e.preventDefault();
-  document.getElementById('modal-esgotado').classList.add('ativo');
-  document.body.style.overflow = 'hidden';
-}
-
-function fecharModal(){
-  document.getElementById('modal-esgotado').classList.remove('ativo');
-  document.body.style.overflow = '';
-}
-
-function fecharModalFora(e){
-  if(e.target === document.getElementById('modal-esgotado')){
-    fecharModal();
-  }
-}
 </script>
 </body>
 </html>
